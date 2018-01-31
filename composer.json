@@ -31,10 +31,5 @@
         "psr-4": {
             "Bantenprov\\ProfilNpwp\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
     }
 }
