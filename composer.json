@@ -25,9 +25,6 @@
         "phpunit/phpunit": "~5.7"
     },
     "autoload": {
-        "classmap": [
-            "database"
-        ],
         "files": [
             "src/helpers/helpers.php"
         ],
@@ -39,20 +36,5 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
-        ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
     }
 }
