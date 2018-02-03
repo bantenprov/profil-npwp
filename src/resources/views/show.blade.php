@@ -1,13 +1,15 @@
+@extends('layouts.admin-page')
+
 @section('content')
 <div class="container">
 	<div class="row">		
 		<div class="col-md-12">
-			<a href="{{ route('profil.index') }}" class="btn btn-xs btn-primary">Back</a>
+			<a href="{{ route('profil.index') }}" class="btn btn-sm btn-primary">Back</a>
 			<br>
 			<br>
 			<div class="panel panel-default">
 				<div class="panel-heading">					
-					Detail Profil Npwp
+					Detail Pegawai
 					<span class="pull-right">
 						<a href="{{ route('profil.edit',$profil->id) }}" class="bnt btn-sm btn-success"><i class="fa fa-pencil"></i> Edit</a>
 					</span>
@@ -35,6 +37,11 @@
 							<td>{{ $profil->getUser->name }}</td>
 						</tr>
 						<tr>
+							<td>NIK</td>
+							<td width="20px">:</td>
+							<td>{{ $profil->getUser->nik }}</td>
+						</tr>
+						<tr>
 							<td>Nomor Npwp</td>
 							<td width="20px">:</td>
 							<td>{{ $profil->no_npwp }}</td>
@@ -45,7 +52,7 @@
 							<td>{{ $profil->nama_terdaftar }}</td>
 						</tr>
 						<tr>
-							<td>Tgl Terdaftar</td>
+							<td>Tangggal Daftar</td>
 							<td width="20px">:</td>
 							<td>{{ $profil->tgl_daftar }}</td>
 						</tr>
@@ -54,14 +61,16 @@
 							<td width="20px">:</td>
 							<td>{{ $profil->alamat_terdaftar }}</td>
 						</tr>
-					</table>
-					<tr>
+						<tr>
 							<td>Status</td>
 							<td width="20px">:</td>
 							<td>{{ $profil->status }}</td>
 						</tr>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+@endsection
