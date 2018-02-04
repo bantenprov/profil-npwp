@@ -28,6 +28,7 @@
 
 				<div class="panel-body">
 					{!! Form::open(['route' => ['profil.update',$profil->id],'method' => 'post']) !!}
+						<input type="hidden" name="old_user_id" value="{{ $profil->getUser->id }}">
 						<div class="form-group">
 							<label for="">User</label>
 							<select name="user_id" class="form-control input-sm">
