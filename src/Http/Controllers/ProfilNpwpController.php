@@ -71,17 +71,31 @@ class ProfilNpwpController extends Controller
     }
 
     public function update(Request $request, $id)
-    {	
+    {
+       if($request->old_user_id ==  $request->user_id)
+           {
+                $validator = Validator::make($request->all(),[
+                    'user_id'               => 'required',
+                    'no_npwp'               => 'required',
+                    'nama_terdaftar'        => 'required',
+                    'tgl_daftar'            => 'date|required',
+                    'alamat_terdaftar'      => 'required',
+                    'status'                => 'required'            
+                ]);
+           }
+        else
+            {
+                $validator = Validator::make($request->all(),[
+                    'user_id'               => 'required|unique:profil_npwp,user_id',
+                    'no_npwp'               => 'required',
+                    'nama_terdaftar'        => 'required',
+                    'tgl_daftar'            => 'date|required',
+                    'alamat_terdaftar'      => 'required',
+                    'status'                => 'required'
+                                
+                ]);
+            }
 
-
-    	$validator = Validator::make($request->all(),[ 
-    		'user_id' => 'required',
-    		'no_npwp' => 'required', 
-    		'nama_terdaftar' => 'required', 
-    		'tgl_daftar' => 'date|required', 
-    		'alamat_terdaftar' => 'required', 
-    		'status' => 'required',
-    	]); 
     	if($validator->fails()){ 
     		return redirect()->back()->withErrors($validator)->withInput();
     	}
