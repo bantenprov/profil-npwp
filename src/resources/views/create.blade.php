@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">		
 		<div class="col-md-12">
-			<a href="{{ route('profil.index') }}" class="btn btn-xs btn-primary">Back</a>
+			<a href="{{ route('profil-npwp.index') }}" class="btn btn-sm btn-primary">Back</a>
 			<br>
 			<br>
 			<div class="panel panel-default">
@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="panel-body">
-					{!! Form::open(['route' => 'profil.store','method' => 'post']) !!}
+					{!! Form::open(['route' => 'profil-npwp.store','method' => 'post']) !!}
 						<div class="form-group">
 							<label for="">User</label>
 							<select name="user_id" class="form-control input-sm">
@@ -57,7 +57,7 @@
 							<label for="">Status</label>
 							<input value="{{ old('status') }}" type="text" name="status" class="form-control input-sm" placeholder="Status">
 						</div>						
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-sm btn-default">Submit</button>
 					{!! Form::close() !!}
 				</div>
 			</div>
