@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">		
 		<div class="col-md-12">
-			<a href="{{ route('profil.index') }}" class="btn btn-xs btn-primary">Back</a>
+			<a href="{{ route('profil-npwp.index') }}" class="btn btn-sm btn-primary">Back</a>
 			<br>
 			<br>
 			<div class="panel panel-default">
@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="panel-body">
-					{!! Form::open(['route' => ['profil.update',$profil->id],'method' => 'post']) !!}
+					{!! Form::open(['route' => ['profil-npwp.update',$profil->id],'method' => 'post']) !!}
 						<input type="hidden" name="old_user_id" value="{{ $profil->getUser->id }}">
 						<div class="form-group">
 							<label for="">User</label>
@@ -61,7 +61,7 @@
 							<label for="">Status</label>
 							<input  value="{{ $profil->status}}"type="text" name="status" class="form-control input-sm" placeholder="Status">
 						</div>						
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-sm btn-default">Submit</button>
 					{!! Form::close() !!}
 				</div>
 			</div>
@@ -69,4 +69,3 @@
 	</div>
 </div>
 @endsection
-
